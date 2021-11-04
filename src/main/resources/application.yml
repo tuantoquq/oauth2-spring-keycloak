@@ -1,0 +1,28 @@
+server:
+  port: 8085
+spring:
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      database: chatbot-keycloak
+
+# General setting
+is:
+  keycloak:
+    admin:
+      user: admin
+      password: admin
+
+#keycloak setting
+keycloak:
+  realm: chatbot-security
+  auth-server-url: http://localhost:8080/auth
+  ssl-required: external
+  resource: spring-chatbot-client
+  use-resource-role-mappings: true
+  bearer-only: true
+  credentials:
+    secret: f27c6638-7f70-435c-bb8b-600a552b5c73
+
+
